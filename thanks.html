@@ -14,8 +14,12 @@
 <style>
   :root{--paper:#faf8f4;--ink:#1c1a17;--muted:#8a8378;--line:#e7e2d8;--accent:#9a8c74;}
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    background:var(--paper);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-weight:300;text-align:center;padding:40px}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-weight:300}
+  .promo-bar{display:block;background:#6a5c47;color:rgba(250,248,244,.92);text-align:center;
+    font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;text-decoration:none;transition:background .2s}
+  .promo-bar:hover{background:#5b4e3c}
+  .promo-bar b{color:var(--paper);font-weight:500}
+  .ty{min-height:calc(100vh - 44px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
   .k{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
   h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.2rem,5vw,3.4rem);margin:0 0 18px;line-height:1.1}
   h1 em{font-style:italic;color:var(--accent)}
@@ -26,9 +30,12 @@
 </style>
 </head>
 <body>
-  <div class="k">Inquiry received</div>
-  <h1>Thank you, it's <em>on its way</em>.</h1>
-  <p>Your message just landed in my inbox. I read every inquiry personally and will get back to you within a couple of days. I can't wait to hear more about your day.</p>
-  <a class="btn" href="/">Back to the portfolio</a>
+  <a class="promo-bar" href="inquire?s=mini"><b>Fall Mini Sessions</b> &middot; $125 for 20 minutes &middot; Limited September &amp; October dates &middot; Inquire</a>
+  <main class="ty">
+    <div class="k">Inquiry received</div>
+    <h1>Thank you, it's <em>on its way</em>.</h1>
+    <p>Your message just landed in my inbox. I read every inquiry personally and will get back to you within a couple of days. I can't wait to hear more about your day.</p>
+    <a class="btn" href="/">Back to the portfolio</a>
+  </main>
 </body>
 </html>

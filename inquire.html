@@ -25,9 +25,11 @@
 </head>
 <body>
 
+<a class="promo-bar" href="inquire?s=mini"><b>Fall Mini Sessions</b> &middot; $125 for 20 minutes &middot; Limited September &amp; October dates &middot; Inquire</a>
+
 <nav>
   <div class="nav-in">
-    <a class="brand" href="/">Jen <b>Leigh</b></a>
+    <a class="brand" href="/">Jen <b>Leigh</b> Photography</a>
     <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
     <label for="navtoggle" class="hamburger"><span></span><span></span><span></span></label>
     <div class="navlinks">
@@ -50,18 +52,27 @@
       <div><label for="email">Email</label><input id="email" type="email" name="email" required></div>
     </div>
     <div class="row2">
-      <div><label for="date">Approximate date</label><input id="date" type="date" name="date"></div>
-      <div><label for="type">What are we celebrating?</label>
-        <select id="type" name="event_type">
-          <option>Couples or engagement session</option>
-          <option>Portrait or senior session</option>
-          <option>Fall mini session</option>
-          <option>Elopement</option>
-          <option>Wedding</option>
-          <option>Something else</option>
+      <div><label for="date">Preferred date</label><input id="date" type="date" name="date"></div>
+      <div><label for="time">Preferred time</label>
+        <select id="time" name="preferred_time">
+          <option>Weekday evening (golden hour)</option>
+          <option>Weekend evening (golden hour)</option>
+          <option>Weekend morning (golden hour)</option>
+          <option>Not sure yet, I'm flexible</option>
         </select>
       </div>
     </div>
+    <div><label for="type">What are we celebrating?</label>
+      <select id="type" name="event_type">
+        <option>Couples or engagement session</option>
+        <option>Portrait or senior session</option>
+        <option>Fall mini session</option>
+        <option>Elopement</option>
+        <option>Wedding</option>
+        <option>Something else</option>
+      </select>
+    </div>
+    <p class="form-note">I photograph at golden hour for the best light. I am available weekday evenings after 4:30 and anytime on weekends.</p>
     <div><label for="message">Tell me about your day</label><textarea id="message" name="message" placeholder="Location, vision, anything you're excited about."></textarea></div>
     <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <input type="hidden" name="_subject" value="New inquiry from your photography site">
