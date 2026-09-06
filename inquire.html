@@ -55,6 +55,7 @@
         <select id="type" name="event_type">
           <option>Couples or engagement session</option>
           <option>Portrait or senior session</option>
+          <option>Fall mini session</option>
           <option>Elopement</option>
           <option>Wedding</option>
           <option>Something else</option>
@@ -82,5 +83,12 @@
   <div style="margin-top:14px"><a href="https://www.instagram.com/jleighhcreates" target="_blank" rel="noopener">@jleighhcreates</a></div>
 </footer>
 
+<script>
+  // Pre-select the fall mini option when arriving from the promo banner (inquire?s=mini)
+  if (location.search.indexOf('s=mini') !== -1) {
+    var sel = document.getElementById('type');
+    if (sel) sel.value = 'Fall mini session';
+  }
+</script>
 </body>
 </html>

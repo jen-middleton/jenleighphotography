@@ -104,3 +104,16 @@
   .page-cta{text-align:center;padding:70px 32px 10px}
   .page-cta h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 22px}
   .page-cta h2 em{font-style:italic;color:var(--accent)}
+  .promo-bar{display:block;background:var(--ink);color:var(--paper);text-align:center;
+    font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;transition:background .2s}
+  .promo-bar:hover{background:#2a2723}
+  .promo-bar b{color:var(--accent);font-weight:500}
+  .mini-special{max-width:640px;margin:48px auto 0;text-align:center;border:1px solid var(--accent);
+    border-radius:3px;padding:34px 28px;background:rgba(154,140,116,.06)}
+  .mini-special .k{margin-bottom:10px}
+  .mini-special h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.7rem;margin:0 0 4px}
+  .mini-special .amt{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--accent);font-size:1.7rem;margin-bottom:12px}
+  .mini-special p{color:#5b554c;font-size:.95rem;margin:0 auto 22px;max-width:46ch}
+  .mini-note{text-align:center;margin-top:22px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+  .mini-note a{color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:3px}
+  .mini-note a:hover{color:var(--ink)}
