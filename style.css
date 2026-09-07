@@ -118,3 +118,12 @@
   .mini-note a{color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:3px}
   .mini-note a:hover{color:var(--ink)}
   .form-note{font-size:.8rem;color:var(--muted);margin:-6px 0 0;line-height:1.5}
+  .price-section{padding:56px 0 0}
+  .price-cat{max-width:1000px;margin:0 auto;text-align:center}
+  .price-cat .k{margin-bottom:8px}
+  .price-cat h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(1.7rem,3.6vw,2.3rem);margin:0 0 36px}
+  .tier .pop{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:-8px 0 14px}
+  .incl{list-style:none;padding:0;margin:14px auto 0;max-width:240px;color:#5b554c;font-size:.92rem;text-align:center}
+  .incl li{padding:7px 0;border-top:1px solid var(--line)}
+  .incl li:first-child{border-top:none}
+  .price-includes{max-width:640px;margin:56px auto 0;text-align:center;color:var(--muted);font-size:.9rem;line-height:1.6}
