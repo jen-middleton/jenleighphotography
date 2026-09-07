@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -62,24 +62,18 @@
         </select>
       </div>
     </div>
-    <div><label for="type">What are we celebrating?</label>
-      <select id="type" name="event_type">
-        <option>Couples or engagement session</option>
-        <option>Portrait or senior session</option>
-        <option>Fall mini session</option>
-        <option>Elopement</option>
-        <option>Wedding</option>
-        <option>Something else</option>
-      </select>
-    </div>
-    <div><label for="package">Which package?</label>
+    <div><label for="package">What are you interested in?</label>
       <select id="package" name="package">
         <option>Not sure yet, help me choose</option>
-        <option>The Mini</option>
-        <option>The Signature (most popular)</option>
-        <option>The Full / Extended</option>
-        <option>Fall mini ($125)</option>
-        <option>Elopement or wedding</option>
+        <option>Senior Portraits &middot; The Mini ($150)</option>
+        <option>Senior Portraits &middot; The Signature ($275)</option>
+        <option>Senior Portraits &middot; The Full ($375)</option>
+        <option>Couples &amp; Engagement &middot; The Mini ($175)</option>
+        <option>Couples &amp; Engagement &middot; The Signature ($325)</option>
+        <option>Couples &amp; Engagement &middot; The Extended ($475)</option>
+        <option>Fall Mini Session ($125)</option>
+        <option>Elopement (from $900)</option>
+        <option>Wedding (from $1,500)</option>
       </select>
     </div>
     <p class="form-note">I photograph at golden hour for the best light. I am available weekday evenings after 4:30 and anytime on weekends.</p>
@@ -107,8 +101,8 @@
 <script>
   // Pre-select the fall mini option when arriving from the promo banner (inquire?s=mini)
   if (location.search.indexOf('s=mini') !== -1) {
-    var sel = document.getElementById('type');
-    if (sel) sel.value = 'Fall mini session';
+    var sel = document.getElementById('package');
+    if (sel) sel.value = 'Fall Mini Session ($125)';
   }
 </script>
 </body>
