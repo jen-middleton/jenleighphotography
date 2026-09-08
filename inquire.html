@@ -52,18 +52,18 @@
       <div><label for="email">Email</label><input id="email" type="email" name="email" required></div>
     </div>
     <div class="row2">
-      <div><label for="phone">Phone (optional)</label><input id="phone" type="tel" name="phone"></div>
+      <div><label for="phone">Phone</label><input id="phone" type="tel" name="phone" required></div>
       <div><label for="connect">How would you like to connect?</label>
-        <select id="connect" name="connect">
+        <select id="connect" name="connect" required>
           <option>Email is great</option>
           <option>I'd love a quick call</option>
         </select>
       </div>
     </div>
     <div class="row2">
-      <div><label for="date">Preferred date</label><input id="date" type="date" name="date"></div>
+      <div><label for="date">Preferred date</label><input id="date" type="date" name="date" required></div>
       <div><label for="time">Preferred time</label>
-        <select id="time" name="preferred_time">
+        <select id="time" name="preferred_time" required>
           <option>Weekday evening (golden hour)</option>
           <option>Weekend evening (golden hour)</option>
           <option>Weekend morning (golden hour)</option>
@@ -72,7 +72,7 @@
       </div>
     </div>
     <div><label for="package">What are you interested in?</label>
-      <select id="package" name="package">
+      <select id="package" name="package" required>
         <option>Not sure yet, help me choose</option>
         <option>Senior Portraits &middot; The Mini ($150)</option>
         <option>Senior Portraits &middot; The Signature ($275)</option>
@@ -86,7 +86,7 @@
       </select>
     </div>
     <p class="form-note">I photograph at golden hour for the best light. I am available weekday evenings after 4:30 and anytime on weekends.</p>
-    <div><label for="message">Tell me about your day</label><textarea id="message" name="message" placeholder="Location, vision, anything you're excited about."></textarea></div>
+    <div><label for="message">Tell me about your day</label><textarea id="message" name="message" placeholder="Location, vision, anything you're excited about." required></textarea></div>
     <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <input type="hidden" name="_subject" value="New inquiry from your photography site">
     <input type="hidden" name="_next" value="https://jenleighphotography.com/thanks">
