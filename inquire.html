@@ -89,7 +89,7 @@
     <p class="form-note">I photograph at golden hour for the best light. I am available weekday evenings after 4:30 and anytime on weekends.</p>
     <div><label for="message">Tell me about your day</label><textarea id="message" name="message" placeholder="Location, vision, anything you're excited about." required></textarea></div>
     <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <input type="hidden" name="_subject" value="New inquiry from your photography site">
+    <input type="hidden" id="subjectField" name="_subject" value="New inquiry from your photography site">
     <input type="hidden" name="_next" value="https://jenleighphotography.com/thanks">
     <button class="btn" type="submit">Send inquiry</button>
   </form>
@@ -114,6 +114,26 @@
   if (location.search.indexOf('s=mini') !== -1) {
     var sel = document.getElementById('package');
     if (sel) sel.value = 'Fall Mini Session ($125)';
+  }
+
+  // Stamp the email subject with the date and time the inquiry was sent (Denver time)
+  var inqForm = document.querySelector('.inquire-form');
+  if (inqForm) {
+    inqForm.addEventListener('submit', function () {
+      var subj = document.getElementById('subjectField');
+      if (!subj) return;
+      var stamp;
+      try {
+        stamp = new Date().toLocaleString('en-US', {
+          timeZone: 'America/Denver',
+          dateStyle: 'medium',
+          timeStyle: 'short'
+        });
+      } catch (e) {
+        stamp = new Date().toLocaleString();
+      }
+      subj.value = 'New inquiry - ' + stamp;
+    });
   }
 </script>
 </body>
