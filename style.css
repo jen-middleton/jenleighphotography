@@ -118,6 +118,8 @@
   .mini-note a{color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:3px}
   .mini-note a:hover{color:var(--ink)}
   .form-note{font-size:.8rem;color:var(--muted);margin:-6px 0 0;line-height:1.5}
+  .price-link{font-size:.82rem;margin-top:8px}
+  .price-link a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
   .price-section{padding:56px 0 0}
   .price-cat{max-width:1000px;margin:0 auto;text-align:center}
   .price-cat .k{margin-bottom:8px}
