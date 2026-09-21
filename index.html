@@ -58,7 +58,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -70,8 +70,8 @@
     <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
     <label for="navtoggle" class="hamburger"><span></span><span></span><span></span></label>
     <div class="navlinks">
-      <a href="#couples">Couples &amp; Weddings</a>
-      <a href="#portraits">Portraits</a>
+      <a href="weddings-couples">Couples &amp; Weddings</a>
+      <a href="portraits">Portraits</a>
       <a href="pricing">Pricing</a>
       <a href="about">About</a>
       <a href="inquire">Inquire</a>
@@ -88,7 +88,10 @@
     <a class="btn" href="inquire">Inquire</a>
   </div>
   <div class="hero-photo">
-    <img src="assets/couples-05.jpg" alt="Colorado couple at sunset on a fence in a field" style="object-fit:contain">
+    <img class="is-active" src="assets/couples-05.jpg" alt="Colorado couple at sunset on a fence in a field">
+    <img src="assets/couples-08.jpg" alt="Colorado couple at golden hour in a wildflower field">
+    <img src="assets/couples-07.jpg" alt="Colorado couple close together at sunset">
+    <img src="assets/couples-01.jpg" alt="Colorado couple embracing at a mountain overlook">
   </div>
 </header>
 
@@ -99,21 +102,9 @@
       <h2>Two people, one evening of light</h2>
     </div>
     <div class="gal">
+      <figure><img src="assets/couples-04.jpg" alt="Engaged couple on a fence at sunset"></figure>
       <figure><img src="assets/couples-10.jpg" alt="Couple laughing in a field of flowers"></figure>
-      <figure><img src="assets/couples-01.jpg" alt="Couple embracing at a mountain overlook"></figure>
-      <figure><img src="assets/wedding-01.jpg" alt="Wedding venue"></figure>
-      <figure><img src="assets/film-01.jpg" alt="Engagement ring at a mountain lake"></figure>
-      <figure><img src="assets/couples-08.jpg" alt="Couple at golden hour in a field of flowers"></figure>
       <figure><img src="assets/couples-06.jpg" alt="Couple in a golden field"></figure>
-      <figure><img src="assets/wedding-02.jpg" alt="Outdoor wedding ceremony"></figure>
-      <figure><img src="assets/film-02.jpg" alt="Couple at a mountain lake"></figure>
-      <figure><img src="assets/couples-02.jpg" alt="Ring detail, hands on shoulders"></figure>
-      <figure><img src="assets/couples-07.jpg" alt="Couple close together at sunset"></figure>
-      <figure><img src="assets/wedding-03.jpg" alt="Reception details"></figure>
-      <figure><img src="assets/film-03.jpg" alt="Couple walking at a mountain lake"></figure>
-      <figure><img src="assets/film-04.jpg" alt="Couple embracing at a mountain lake"></figure>
-      <figure><img src="assets/couples-04.jpg" alt="Engaged couple on a fence"></figure>
-      <figure><img src="assets/wedding-04.jpg" alt="First dance"></figure>
     </div>
     <div class="gal-more"><a href="weddings-couples">See more weddings &amp; couples</a></div>
   </div>
@@ -126,18 +117,9 @@
       <h2>The version of you that feels like you</h2>
     </div>
     <div class="gal">
-      <figure><img src="assets/portrait-13.jpg" alt="Senior portrait in a golden field"></figure>
-      <figure><img src="assets/portrait-01.jpg" alt="Portrait in warm light"></figure>
-      <figure><img src="assets/portrait-10.jpg" alt="Senior portrait in a golden field"></figure>
-      <figure><img src="assets/portrait-04.jpg" alt="Portrait at Red Rocks"></figure>
-      <figure><img src="assets/portrait-06.jpg" alt="Senior portrait outdoors"></figure>
-      <figure><img src="assets/portrait-09.jpg" alt="Portrait outdoors"></figure>
+      <figure><img src="assets/portrait-13.jpg" alt="Senior portrait in a golden wildflower field"></figure>
       <figure><img src="assets/portrait-11.jpg" alt="Senior portrait at golden hour"></figure>
-      <figure><img src="assets/portrait-03.jpg" alt="Graduation portrait"></figure>
       <figure><img src="assets/portrait-12.jpg" alt="Senior portrait in the trees"></figure>
-      <figure><img src="assets/portrait-02.jpg" alt="Graduation celebration"></figure>
-      <figure><img src="assets/portrait-07.jpg" alt="Senior portrait at golden hour"></figure>
-      <figure><img src="assets/portrait-08.jpg" alt="Creative portrait in greenery"></figure>
     </div>
     <div class="gal-more"><a href="portraits">See more portraits &amp; seniors</a></div>
   </div>
@@ -210,6 +192,20 @@
   </div>
   <div style="margin-top:14px"><a href="https://www.instagram.com/jleighhcreates" target="_blank" rel="noopener">@jleighhcreates</a></div>
 </footer>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.hero-photo img');
+  if (slides.length < 2) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var i = 0;
+  setInterval(function(){
+    slides[i].classList.remove('is-active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('is-active');
+  }, 4500);
+})();
+</script>
 
 </body>
 </html>
