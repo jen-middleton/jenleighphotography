@@ -54,7 +54,7 @@
 
   /* uniform 2:3 grid — every tile identical, perfectly aligned, no gaps.
      Order is chosen so lookalike shots never sit next to each other. */
-  .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .gal figure{margin:0;overflow:hidden;border-radius:2px}
   .gal img{width:100%;height:100%;aspect-ratio:2/3;object-fit:cover;object-position:center;display:block;transition:transform .7s ease,filter .4s}
   .gal figure:hover img{transform:scale(1.03);filter:saturate(1.05)}
