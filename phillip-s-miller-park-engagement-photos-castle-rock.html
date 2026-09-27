@@ -129,6 +129,12 @@
 .post-split-img img{width:100%;height:auto;max-height:620px;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:2px;display:block;cursor:zoom-in}
 @media(max-width:820px){.post-split{grid-template-columns:1fr;gap:26px;padding-top:50px}.post-split-img img{aspect-ratio:4/3}}
 @media(max-width:620px){.post-split{padding-left:22px;padding-right:22px}}
+.post-gallery.g2{max-width:820px}
+.post-gallery.g2 img{width:calc((100% - 12px)/2)}
+.post-gallery.last-wide img:not(.wide):nth-last-child(1 of :not(.wide)){width:100%;aspect-ratio:3/2}
+.post-body ul{padding-left:20px}
+.post-body li{margin:6px 0}
+@media(max-width:620px){.post-gallery.g2 img{width:calc((100% - 8px)/2)}}
 </style>
 </head>
 <body>
@@ -141,7 +147,7 @@
     <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
     <label for="navtoggle" class="hamburger"><span></span><span></span><span></span></label>
     <div class="navlinks">
-      <a href="weddings-couples">Weddings &amp; Couples</a>
+      <a href="couples">Couples</a>
       <a href="portraits">Portraits</a>
       <a href="pricing">Pricing</a>
       <a href="blog">Blog</a>
@@ -177,7 +183,7 @@
   <p>Wear shoes you can walk in to get up to the overlook, and bring your second outfit on a hanger so it stays wrinkle-free. The park is popular with runners and families on nice evenings, so we'll plan spots around the busier trails.</p>
 </div>
 
-<div class="post-gallery">
+<div class="post-gallery g3">
   <img src="assets/blog/thumbs/castle-rock-09.jpg" data-full="assets/blog/castle-rock-09.jpg" alt="Kiss on a rocky overlook above Castle Rock after an outfit change" width="1067" height="1600" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/castle-rock-02.jpg" data-full="assets/blog/castle-rock-02.jpg" alt="Newly engaged couple standing close in the tall grass at golden hour, Castle Rock" width="1067" height="1600" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/castle-rock-03.jpg" data-full="assets/blog/castle-rock-03.jpg" alt="Engaged couple sitting on a wooden fence in the meadow at Phillip S. Miller Park" width="1067" height="1600" loading="lazy" decoding="async">
@@ -194,7 +200,7 @@
 
 <div class="post-cta">
   <p>Just engaged? I'd love to celebrate with you. Engagement sessions work beautifully at Phillip S. Miller Park and all around Denver and the foothills.</p>
-  <a class="btn" href="weddings-couples">Couples &amp; Weddings</a>
+  <a class="btn" href="couples">Couples</a>
   <a class="btn" href="inquire">Inquire</a>
 </div>
 <p class="post-back"><a href="blog">More from the blog</a></p>

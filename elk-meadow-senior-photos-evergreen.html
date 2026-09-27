@@ -129,6 +129,12 @@
 .post-split-img img{width:100%;height:auto;max-height:620px;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:2px;display:block;cursor:zoom-in}
 @media(max-width:820px){.post-split{grid-template-columns:1fr;gap:26px;padding-top:50px}.post-split-img img{aspect-ratio:4/3}}
 @media(max-width:620px){.post-split{padding-left:22px;padding-right:22px}}
+.post-gallery.g2{max-width:820px}
+.post-gallery.g2 img{width:calc((100% - 12px)/2)}
+.post-gallery.last-wide img:not(.wide):nth-last-child(1 of :not(.wide)){width:100%;aspect-ratio:3/2}
+.post-body ul{padding-left:20px}
+.post-body li{margin:6px 0}
+@media(max-width:620px){.post-gallery.g2 img{width:calc((100% - 8px)/2)}}
 </style>
 </head>
 <body>
@@ -141,7 +147,7 @@
     <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
     <label for="navtoggle" class="hamburger"><span></span><span></span><span></span></label>
     <div class="navlinks">
-      <a href="weddings-couples">Weddings &amp; Couples</a>
+      <a href="couples">Couples</a>
       <a href="portraits">Portraits</a>
       <a href="pricing">Pricing</a>
       <a href="blog">Blog</a>
@@ -177,7 +183,7 @@
   <p>Elk Meadow is a Jefferson County open space park with trailhead parking lots. Stay on the trails and give any wildlife plenty of space. You may even spot the elk the park is named after. It's about 40 minutes from Denver, and totally worth the drive for a senior session.</p>
 </div>
 
-<div class="post-gallery">
+<div class="post-gallery g3">
   <img src="assets/blog/thumbs/elk-meadow-02.jpg" data-full="assets/blog/elk-meadow-02.jpg" alt="Senior kneeling in the tall meadow grass, smiling with her head tilted, at Elk Meadow" width="1066" height="1600" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/elk-meadow-03.jpg" data-full="assets/blog/elk-meadow-03.jpg" alt="Senior walking through the golden meadow in Evergreen, Colorado" width="1066" height="1600" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/elk-meadow-06.jpg" data-full="assets/blog/elk-meadow-06.jpg" alt="Golden hour senior portrait with the sun behind her hair" width="1066" height="1600" loading="lazy" decoding="async">
