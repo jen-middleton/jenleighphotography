@@ -34,7 +34,7 @@
 </head>
 <body>
 
-<a class="promo-bar" href="minis"><b>Fall Mini Sessions</b> &middot; $125 for 20 minutes &middot; October 24 only &middot; Book now</a>
+<a class="promo-bar" href="minis"><b>Christmas Card Minis</b> &middot; $125 for 20 minutes &middot; Sunday, November 15 &middot; Book now</a>
 
 <nav>
   <div class="nav-in">
@@ -62,7 +62,7 @@
 <section class="contact" id="contact" style="border-top:none;margin-top:0;padding-top:96px">
   <div class="k">Let's work together</div>
   <h2>Let's make something <em>beautiful</em>.</h2>
-  <p>Couples, engagements, portraits, and weddings. Tell me about your day.</p>
+  <p>Couples, engagements, portraits, elopements, and weddings. Tell me about your day.</p>
   <form class="inquire-form" action="https://formspree.io/f/xrpgavjn" method="POST">
     <div class="row2">
       <div><label for="name">Name</label><input id="name" type="text" name="name" required></div>
@@ -98,10 +98,9 @@
         <option>Couples &amp; Engagement &middot; 30 Minutes ($175)</option>
         <option>Couples &amp; Engagement &middot; 1 Hour ($325)</option>
         <option>Couples &amp; Engagement &middot; 2 Hours ($475)</option>
-        <option>Fall Mini Session ($125)</option>
-        <option>Wedding &middot; The Petite, 6 Hours ($2,400)</option>
-        <option>Wedding &middot; The Signature, 8 Hours ($3,150)</option>
-        <option>Wedding &middot; The Full Day, 10 Hours ($3,900)</option>
+        <option>Christmas Card Mini Session ($125)</option>
+        <option>Elopement (from $1,200)</option>
+        <option>Wedding (from $2,400)</option>
       </select>
       <div class="price-link"><a href="pricing">See full pricing &amp; packages</a></div>
     </div>
@@ -129,10 +128,10 @@
 </footer>
 
 <script>
-  // Pre-select the fall mini option when arriving from the promo banner (inquire?s=mini)
+  // Pre-select the mini session option when arriving from the promo banner (inquire?s=mini)
   if (location.search.indexOf('s=mini') !== -1) {
     var sel = document.getElementById('package');
-    if (sel) sel.value = 'Fall Mini Session ($125)';
+    if (sel) sel.value = 'Christmas Card Mini Session ($125)';
   }
 
   // Stamp the email subject with the date and time the inquiry was sent (Denver time)
