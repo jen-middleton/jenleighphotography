@@ -100,7 +100,9 @@
 .post-body a{color:var(--accent,#a0643c);text-decoration:underline}
 .post-gallery{max-width:1100px;margin:30px auto;padding:0 32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .post-gallery img{width:calc((100% - 24px)/3);height:auto;display:block;border-radius:2px;cursor:zoom-in}
-.post-gallery img.wide{width:100%}
+.post-gallery img.wide{width:calc((100% - 12px)/2);aspect-ratio:3/2;object-fit:cover}
+.post-gallery img.wide.solo{width:100%}
+@media(max-width:620px){.post-gallery img.wide{width:100%}}
 .post-cta{max-width:680px;margin:10px auto 70px;padding:28px 32px;text-align:center;border-top:1px solid #e6dfd4}
 .post-cta .btn{margin:14px 6px 0}
 .blog-list{max-width:1100px;margin:0 auto;padding:10px 32px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:34px}
@@ -200,7 +202,7 @@
   <img src="assets/blog/thumbs/wash-park-05.jpg" data-full="assets/blog/wash-park-05.jpg" alt="She twirls under his arm on the lawn under the big trees in Washington Park" width="1067" height="1600" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/wash-park-10.jpg" data-full="assets/blog/wash-park-10.jpg" alt="Couple lying in the grass with her arms around him in front of the flower gardens" width="1066" height="1600" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/wash-park-08.jpg" data-full="assets/blog/wash-park-08.jpg" alt="He lifts her up for a kiss on the shore of the lake at Washington Park, Denver" width="1067" height="1600" loading="lazy" decoding="async">
-  <img class="wide" src="assets/blog/thumbs/wash-park-11.jpg" data-full="assets/blog/wash-park-11.jpg" alt="Close-up of the couple lying in the grass, her arms around his shoulders, both smiling" width="1600" height="1067" loading="lazy" decoding="async">
+  <img class="wide solo" src="assets/blog/thumbs/wash-park-11.jpg" data-full="assets/blog/wash-park-11.jpg" alt="Close-up of the couple lying in the grass, her arms around his shoulders, both smiling" width="1600" height="1067" loading="lazy" decoding="async">
 </div>
 
 <div class="post-cta">

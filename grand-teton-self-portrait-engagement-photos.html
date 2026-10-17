@@ -100,7 +100,9 @@
 .post-body a{color:var(--accent,#a0643c);text-decoration:underline}
 .post-gallery{max-width:1100px;margin:30px auto;padding:0 32px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .post-gallery img{width:calc((100% - 24px)/3);height:auto;display:block;border-radius:2px;cursor:zoom-in}
-.post-gallery img.wide{width:100%}
+.post-gallery img.wide{width:calc((100% - 12px)/2);aspect-ratio:3/2;object-fit:cover}
+.post-gallery img.wide.solo{width:100%}
+@media(max-width:620px){.post-gallery img.wide{width:100%}}
 .post-cta{max-width:680px;margin:10px auto 70px;padding:28px 32px;text-align:center;border-top:1px solid #e6dfd4}
 .post-cta .btn{margin:14px 6px 0}
 .blog-list{max-width:1100px;margin:0 auto;padding:10px 32px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:34px}
@@ -197,7 +199,7 @@
 </div>
 
 <div class="post-gallery g3">
-  <img class="wide" src="assets/blog/thumbs/grand-teton-05.jpg" data-full="assets/blog/grand-teton-05.jpg" alt="Couple standing close and smiling on the lakeshore with the snow-capped Tetons behind them" width="1600" height="1069" loading="lazy" decoding="async">
+  <img class="wide solo" src="assets/blog/thumbs/grand-teton-05.jpg" data-full="assets/blog/grand-teton-05.jpg" alt="Couple standing close and smiling on the lakeshore with the snow-capped Tetons behind them" width="1600" height="1069" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/grand-teton-02.jpg" data-full="assets/blog/grand-teton-02.jpg" alt="Black and white photo of the couple walking hand in hand along the rocky lakeshore in Grand Teton" width="1306" height="1600" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/grand-teton-03.jpg" data-full="assets/blog/grand-teton-03.jpg" alt="Close-up of the couple holding hands with the lake and snowy Teton peaks between them" width="1184" height="1600" loading="lazy" decoding="async">
   <img src="assets/blog/thumbs/grand-teton-film-02.jpg" data-full="assets/blog/grand-teton-film-02.jpg" alt="She jumps into his arms for a hug on the lakeshore in Grand Teton National Park" width="1067" height="1600" loading="lazy" decoding="async">
