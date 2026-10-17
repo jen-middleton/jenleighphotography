@@ -169,3 +169,6 @@
   .pf-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-top:16px}
   .pf-go{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:6px}
   @media(max-width:820px){.pf-grid{grid-template-columns:1fr;gap:30px}.pf-tile img{aspect-ratio:5/4}}
+
+/* small + tax note after prices (Jen 2026-10-17) */
+  .amt .tax{font-family:'Jost',sans-serif;font-style:normal;font-size:.72rem;letter-spacing:.06em;color:var(--muted);margin-left:2px}
