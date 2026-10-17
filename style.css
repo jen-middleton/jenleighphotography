@@ -29,12 +29,12 @@
     .navlinks a:last-child{border-bottom:none}
   }
 
-  .hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1240px;margin:0 auto;padding:86px 32px 70px}
+  .hero{display:grid;grid-template-columns:minmax(0,500px) minmax(0,430px);justify-content:center;gap:64px;align-items:center;max-width:1240px;margin:0 auto;padding:86px 32px 70px}
   .hero-eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:26px}
   .hero-text{min-width:0}
   .hero h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.04;letter-spacing:.01em;margin:0 0 22px;overflow-wrap:break-word}
   .hero h1 em{font-style:italic;color:var(--accent)}
-  .hero p{font-size:1rem;color:#5b554c;max-width:34ch;margin:0 0 30px}
+  .hero p{font-size:1rem;color:#5b554c;max-width:50ch;margin:0 0 30px}
   .hero-photo{position:relative;height:min(74vh,640px)}
   .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 1.2s ease;border-radius:2px}
   .hero-photo img.is-active{opacity:1}
