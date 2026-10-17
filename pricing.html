@@ -13,7 +13,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pricing &amp; Packages | Jen Leigh Photography</title>
-<meta name="description" content="Photography pricing and packages in Colorado: senior portraits, family photos, couples and engagements, and fall mini sessions. Film and digital.">
+<meta name="description" content="Photography pricing and packages in Colorado: senior portraits, family photos, couples and engagements, weddings, and fall mini sessions. Film and digital.">
 <link rel="canonical" href="https://jenleighphotography.com/pricing">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jen Leigh Photography">
@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -42,8 +42,15 @@
     <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
     <label for="navtoggle" class="hamburger"><span></span><span></span><span></span></label>
     <div class="navlinks">
-      <a href="couples">Couples</a>
-      <a href="portraits">Portraits</a>
+      <div class="dd">
+        <input type="checkbox" id="ddtoggle" class="ddtoggle">
+        <label for="ddtoggle" class="dd-btn">Portfolio</label>
+        <div class="dd-menu"><div class="dd-in">
+          <a href="portraits">Portraits &amp; Seniors</a>
+          <a href="couples">Couples</a>
+          <a href="weddings">Weddings</a>
+        </div></div>
+      </div>
       <a href="pricing">Pricing</a>
       <a href="blog">Blog</a>
       <a href="about">About</a>
@@ -145,6 +152,48 @@
 <section class="price-section">
   <div class="wrap">
     <div class="price-cat">
+      <div class="k">Weddings</div>
+      <h2>Wedding Collections</h2>
+    </div>
+    <div class="price-grid">
+      <div class="price-card tier">
+        <h3>The Petite</h3>
+        <div class="amt">$2,400</div>
+        <ul class="incl">
+          <li>6 hours of coverage</li>
+          <li>Getting ready through the first dances</li>
+          <li>About 350 edited images</li>
+        </ul>
+      </div>
+      <div class="price-card tier">
+        <h3>The Signature</h3>
+        <div class="amt">$3,150</div>
+        <div class="pop">Most loved</div>
+        <ul class="incl">
+          <li>8 hours of coverage</li>
+          <li>The full day, prep through the party</li>
+          <li>About 500 edited images</li>
+          <li>Sneak peeks</li>
+        </ul>
+      </div>
+      <div class="price-card tier">
+        <h3>The Full Day</h3>
+        <div class="amt">$3,900</div>
+        <ul class="incl">
+          <li>10 hours of coverage</li>
+          <li>First light through the send-off</li>
+          <li>About 650 edited images</li>
+          <li>Sneak peeks</li>
+        </ul>
+      </div>
+    </div>
+    <p class="price-includes">Every wedding collection includes a pre-wedding consultation call and day-of timeline and location planning. Add-ons: film coverage $250, engagement session from $175, additional hour $300.</p>
+  </div>
+</section>
+
+<section class="price-section">
+  <div class="wrap">
+    <div class="price-cat">
       <div class="k">Seasonal</div>
       <h2>Mini Sessions</h2>
     </div>
@@ -176,6 +225,7 @@
   <div class="subnav-links" style="margin-top:26px">
     <a href="couples">Couples</a>
     <a href="portraits">Portraits &amp; Seniors</a>
+    <a href="weddings">Weddings</a>
   </div>
 </section>
 
