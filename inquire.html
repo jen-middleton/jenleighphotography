@@ -98,7 +98,6 @@
         <option>Couples &amp; Engagement &middot; 30 Minutes ($175)</option>
         <option>Couples &amp; Engagement &middot; 1 Hour ($325)</option>
         <option>Couples &amp; Engagement &middot; 2 Hours ($475)</option>
-        <option>Holiday Card Mini Session ($125)</option>
         <option>Elopement (from $1,200)</option>
         <option>Wedding (from $2,400)</option>
       </select>
@@ -128,11 +127,8 @@
 </footer>
 
 <script>
-  // Pre-select the mini session option when arriving from the promo banner (inquire?s=mini)
-  if (location.search.indexOf('s=mini') !== -1) {
-    var sel = document.getElementById('package');
-    if (sel) sel.value = 'Holiday Card Mini Session ($125)';
-  }
+  // Minis are booked on the minis page only (Jen 2026-10-18); send old inquire?s=mini links there
+  if (location.search.indexOf('s=mini') !== -1) location.replace('minis');
 
   // Stamp the email subject with the date and time the inquiry was sent (Denver time)
   var inqForm = document.querySelector('.inquire-form');
