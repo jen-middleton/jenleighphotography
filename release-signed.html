@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Release Signed | Jen Leigh Photography</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Shown after release.html is sent: thank-you plus the signer's own copy to print or save (Jen 2026-10-29). -->
+<style>
+  :root{--paper:#faf8f4;--ink:#1c1a17;--muted:#5f594f;--line:#d9d2c4;--accent:#9a8c74}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-weight:300;line-height:1.55}
+  main{max-width:720px;margin:0 auto;padding:48px 16px 64px}
+  .k{text-align:center;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2rem,6vw,2.8rem);text-align:center;margin:0 0 12px;line-height:1.1}
+  h1 em{color:var(--accent)}
+  .lead{text-align:center;color:var(--muted);margin:0 auto 28px;max-width:46ch}
+  .btn{display:block;margin:0 auto 34px;font:inherit;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;background:var(--ink);color:var(--paper);
+    border:0;border-radius:4px;padding:15px 30px;cursor:pointer}
+  .copy{border:1px solid var(--line);border-radius:4px;padding:22px 18px;background:#fff}
+  .copy h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin:0 0 14px}
+  dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:0 0 18px;font-size:.95rem}
+  dt{color:var(--muted)}
+  dd{margin:0;word-break:break-word}
+  .terms p{font-size:.88rem;margin:0 0 10px}
+  @media (max-width:520px){dl{grid-template-columns:1fr}dd{margin-bottom:6px}}
+  @media print{.btn,.lead,.k,h1{display:none}main{padding:0}.copy{border:0}}
+</style>
+</head>
+<body>
+<main>
+  <p class="k">Release signed</p>
+  <h1>Thank you, it's <em>all set</em>.</h1>
+  <p class="lead">Your signed release is on its way to Jen. Here is your copy to keep.</p>
+  <button class="btn" type="button" onclick="window.print()">Print or save your copy</button>
+  <div class="copy" id="copy"><p>Your copy could not be shown on this device, but your release was sent. Jen can send you a copy any time.</p></div>
+</main>
+<script>
+(function () {
+  var c;
+  try { c = JSON.parse(sessionStorage.getItem('jl_release_copy') || 'null'); } catch (x) { c = null; }
+  if (!c) return;
+  function esc(s) { return String(s || '').replace(/[&<>"]/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]; }); }
+  var rows = [['Signed', c.signed_at], ['Session date', c.session_date], ['Session type', c.session_type], ['Location', c.session_location],
+    ['Permission', c.choices], ['Tagging', c.tagging], ['Instagram', c.instagram], ['Signer 1', c.signer1], ['Signer 2', c.signer2],
+    ['Children', c.minors], ['Email', c.email], ['Phone', c.phone]].filter(function (r) { return r[1]; });
+  var html = '<h2>Model and Media Release</h2><dl>' + rows.map(function (r) { return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') + '</dl>';
+  html += '<div class="terms">' + c.wording.split('\n\n').map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '</div>';
+  html += '<p class="terms" style="color:#5f594f;font-size:.8rem">Signed online by typed name. Release version ' + esc(c.version) + '. Jen Leigh Photography, jenleighphotography.com</p>';
+  document.getElementById('copy').innerHTML = html;
+})();
+</script>
+</body>
+</html>

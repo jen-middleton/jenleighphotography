@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model and Media Release | Jen Leigh Photography</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Media release as a web form (Jen 2026-10-29). Sends to the same Formspree form as the inquiry page.
+     Wording matches questionnaire/release.py (the PDF). Change RELEASE_VERSION when the wording changes. -->
+<style>
+  :root{--paper:#faf8f4;--ink:#1c1a17;--muted:#5f594f;--line:#d9d2c4;--accent:#9a8c74;--bad:#9a3b2f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:16px;line-height:1.55}
+  main{max-width:720px;margin:0 auto;padding:40px 16px 64px}
+  .brand{text-align:center;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+  .brand a{color:inherit;text-decoration:none}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2rem,6vw,2.8rem);text-align:center;margin:0;line-height:1.1}
+  .sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--accent);text-align:center;font-size:1.15rem;margin:6px 0 32px}
+  h2{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);font-weight:400;margin:34px 0 12px}
+  .terms p{margin:0 0 12px;font-size:.95rem}
+  label{display:block;font-size:.85rem;color:var(--muted);margin:0 0 5px}
+  input[type=text],input[type=email],input[type=tel],input[type=date]{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;
+    border:1px solid var(--line);border-radius:4px;padding:11px 12px;min-height:46px}
+  input:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid .full{grid-column:1/-1}
+  .choice{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:4px;background:#fff;margin:0 0 8px;cursor:pointer;color:var(--ink);font-size:1rem}
+  .choice input{width:22px;height:22px;margin:1px 0 0;accent-color:#6a5c47;flex:none}
+  .choice small{display:block;color:var(--muted);font-size:.85rem}
+  .note{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+  .signer{border:1px solid var(--line);border-radius:4px;padding:16px;margin:0 0 12px;background:rgba(255,255,255,.5)}
+  .signer h3{font-weight:400;font-size:1rem;margin:0 0 10px}
+  .err{color:var(--bad);font-size:.9rem;margin:10px 0 0;min-height:1.2em}
+  .btn{display:block;width:100%;margin-top:22px;font:inherit;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper);border:0;border-radius:4px;padding:17px 20px;cursor:pointer}
+  .btn:hover{background:#3a352e}
+  .hp{position:absolute;left:-9999px}
+  @media (max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+  <p class="brand"><a href="/">Jen Leigh Photography</a></p>
+  <h1>Model and Media Release</h1>
+  <p class="sub">Permission to share the photos from your session</p>
+
+  <form id="rel" action="https://formspree.io/f/xrpgavjn" method="POST" novalidate>
+    <h2>Your session</h2>
+    <div class="grid">
+      <div><label for="session_date">Session date</label><input id="session_date" type="date" name="session_date" required></div>
+      <div><label for="session_type">Session type</label><input id="session_type" type="text" name="session_type" placeholder="Family, couples, seniors..."></div>
+      <div class="full"><label for="session_location">Location</label><input id="session_location" type="text" name="session_location"></div>
+    </div>
+
+    <h2>The release</h2>
+    <div class="terms" id="terms">
+      <p>In exchange for the photography session described above, I give Jennifer Middleton, doing business as Jen Leigh Photography ("the Photographer"), the right to use photographs taken of me, and of any minors listed on this form, during that session, in whole or in part, in any medium, only for the uses I check below, without further payment to me. Portfolio means the Photographer's website, online portfolio, and blog. Social media means the Photographer's own social media accounts, such as Instagram and Facebook. Advertising means ads and printed marketing for Jen Leigh Photography, such as paid social media ads, flyers, and cards. Contests and publications means photography contests and features in magazines, books, or online publications.</p>
+      <p>I understand that the images may be edited, cropped, or retouched, and I waive any right to inspect or approve the finished images or any captions used with them. I release the Photographer from any claims for invasion of privacy, right of publicity, or defamation that arise from using the images as described in this release.</p>
+      <p>The Photographer will not use the images for any use I have not checked, will not sell them to others for stock or advertising use, will not use them in a misleading or embarrassing way, and will not share the full names, addresses, or schools of any minors. I may withdraw permission for future use at any time by letting the Photographer know in writing. Images already published or printed before then cannot be recalled.</p>
+      <p>Either way, the Photographer owns the copyright to all images from the session. This release is governed by the laws of the State of Colorado.</p>
+    </div>
+
+    <h2>Your choice</h2>
+    <label class="choice"><input type="checkbox" name="use_portfolio" value="Yes" id="use_portfolio"><span>Portfolio<small>Website and blog</small></span></label>
+    <label class="choice"><input type="checkbox" name="use_social" value="Yes" id="use_social"><span>Social media<small>Instagram, Facebook</small></span></label>
+    <label class="choice"><input type="checkbox" name="use_advertising" value="Yes" id="use_advertising"><span>Advertising and printed marketing<small>Ads, flyers, and cards for Jen Leigh Photography</small></span></label>
+    <label class="choice"><input type="checkbox" name="use_contests" value="Yes" id="use_contests"><span>Contests and publications<small>Photography contests, magazines, books, online features</small></span></label>
+    <label class="choice"><input type="checkbox" name="keep_private" value="Yes" id="keep_private"><span>No, please keep my photos private<small>Not posted, published, or shared. For my personal use only.</small></span></label>
+    <p class="note">Check every use you allow, or No.</p>
+
+    <h2>Tagging</h2>
+    <label class="choice"><input type="radio" name="tagging" value="Please tag me" id="tag_yes"><span>Please tag me</span></label>
+    <label class="choice"><input type="radio" name="tagging" value="Please do not tag me" id="tag_no"><span>Please do not tag me</span></label>
+    <div style="margin-top:10px"><label for="instagram">Instagram handle (optional)</label><input id="instagram" type="text" name="instagram" placeholder="@yourname" autocapitalize="off"></div>
+
+    <h2>Signers</h2>
+    <p class="note" style="margin:0 0 12px">Each adult in the photos signs. Type your full name as your signature. By signing, I confirm I am at least 18, have read this release, and agree to the choices checked above. More than two adults: send the extra people this same link.</p>
+    <div class="signer">
+      <h3>Signer 1</h3>
+      <label for="signer1_name">Full name (your signature)</label>
+      <input id="signer1_name" type="text" name="signer1_signature" autocomplete="name" required>
+    </div>
+    <div class="signer">
+      <h3>Signer 2 <span style="color:var(--muted);font-size:.85rem">(if there is a second adult)</span></h3>
+      <label for="signer2_name">Full name (your signature)</label>
+      <input id="signer2_name" type="text" name="signer2_signature">
+    </div>
+
+    <h2>Children in the session (under 18)</h2>
+    <div class="grid">
+      <div class="full"><label for="minor_names">Children's first names and ages (if any)</label><input id="minor_names" type="text" name="minor_names" placeholder="Ava 6, Leo 3"></div>
+    </div>
+    <p class="note">A signer above who is the children's parent or legal guardian agrees for them, and confirms they have the legal authority to do so.</p>
+
+    <h2>Your contact info</h2>
+    <div class="grid">
+      <div><label for="email">Email</label><input id="email" type="email" name="email" autocomplete="email" required></div>
+      <div><label for="phone">Phone (optional)</label><input id="phone" type="tel" name="phone" autocomplete="tel"></div>
+    </div>
+
+    <label class="choice" style="margin-top:26px"><input type="checkbox" name="esign_consent" value="Yes" id="esign"><span>I agree that typing my name above is my electronic signature, and that I am signing this release online.</span></label>
+
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="hidden" name="_subject" id="subj" value="Signed media release">
+    <input type="hidden" name="_next" value="https://jenleighphotography.com/release-signed">
+    <input type="hidden" name="release_version" value="2026-10-29b">
+    <input type="hidden" name="choices" id="choices">
+    <input type="hidden" name="signed_at" id="signed_at">
+    <input type="hidden" name="release_wording" id="wording">
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn" type="submit">Sign and send</button>
+  </form>
+</main>
+<script>
+(function () {
+  var f = document.getElementById('rel');
+  var priv = document.getElementById('keep_private');
+  var uses = [['use_portfolio', 'Portfolio (website and blog)'], ['use_social', 'Social media'],
+              ['use_advertising', 'Advertising and printed marketing'], ['use_contests', 'Contests and publications']]
+    .map(function (u) { return { box: document.getElementById(u[0]), label: u[1] }; });
+  // "No" and the uses can't both be checked
+  priv.addEventListener('change', function () { if (priv.checked) uses.forEach(function (u) { u.box.checked = false; }); });
+  uses.forEach(function (u) { u.box.addEventListener('change', function () { if (u.box.checked) priv.checked = false; }); });
+  function picked() { return uses.filter(function (u) { return u.box.checked; }).map(function (u) { return u.label; }); }
+
+  function val(id) { return document.getElementById(id).value.trim(); }
+  f.addEventListener('submit', function (e) {
+    var err = document.getElementById('err'), msg = '';
+    if (!val('session_date')) msg = 'Please add the session date.';
+    else if (!picked().length && !priv.checked) msg = 'Please check at least one use, or No.';
+    else if (!val('signer1_name')) msg = 'Signer 1: please type your full name.';
+    else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val('email'))) msg = 'Please add a valid email.';
+    else if (!document.getElementById('esign').checked) msg = 'Please check the box agreeing to sign online.';
+    if (msg) { e.preventDefault(); err.textContent = msg; return; }
+    err.textContent = '';
+
+    var choices = priv.checked ? 'No, keep my photos private' : picked().join(' + ');
+    var stamp;
+    try { stamp = new Date().toLocaleString('en-US', { timeZone: 'America/Denver', dateStyle: 'medium', timeStyle: 'short' }) + ' (Denver time)'; }
+    catch (x) { stamp = new Date().toString(); }
+    var words = Array.prototype.map.call(document.querySelectorAll('#terms p'), function (p) { return p.textContent; }).join('\n\n');
+    document.getElementById('choices').value = choices;
+    document.getElementById('signed_at').value = stamp;
+    document.getElementById('wording').value = words;
+    var names = [val('signer1_name'), val('signer2_name')].filter(Boolean).join(' and ');
+    document.getElementById('subj').value = 'Signed media release: ' + names + ' (' + choices + ')';
+
+    // The signer's copy, shown on the next page so they can print or save it
+    var tag = document.querySelector('input[name=tagging]:checked');
+    var copy = { signed_at: stamp, session_date: val('session_date'), session_type: val('session_type'), session_location: val('session_location'),
+      choices: choices, tagging: tag ? tag.value : 'Not answered', instagram: val('instagram'), signer1: val('signer1_name'), signer2: val('signer2_name'),
+      minors: val('minor_names'), email: val('email'), phone: val('phone'), wording: words, version: '2026-10-29b' };
+    try { sessionStorage.setItem('jl_release_copy', JSON.stringify(copy)); } catch (x) {}
+  });
+})();
+</script>
+</body>
+</html>
