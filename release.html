@@ -16,6 +16,12 @@
 <style>
   :root{--paper:#faf8f4;--ink:#1c1a17;--muted:#5f594f;--line:#d9d2c4;--accent:#9a8c74;--bad:#9a3b2f}
   *{box-sizing:border-box}
+  html,body{overflow-x:hidden}
+  .grid>div{min-width:0}
+  input{max-width:100%;min-width:0}
+  input[type=date]{-webkit-appearance:none;appearance:none;display:block;text-align:left}
+  input[type=date]::-webkit-date-and-time-value{text-align:left}
+  .hp{left:0;top:0;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:16px;line-height:1.55}
   main{max-width:720px;margin:0 auto;padding:40px 16px 64px}
   .brand{text-align:center;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
@@ -112,7 +118,6 @@
     <input type="hidden" name="release_version" value="2026-10-29b">
     <input type="hidden" name="choices" id="choices">
     <input type="hidden" name="signed_at" id="signed_at">
-    <input type="hidden" name="release_wording" id="wording">
     <p class="err" id="err" role="alert"></p>
     <button class="btn" type="submit">Sign and send</button>
   </form>
@@ -147,7 +152,6 @@
     var words = Array.prototype.map.call(document.querySelectorAll('#terms p'), function (p) { return p.textContent; }).join('\n\n');
     document.getElementById('choices').value = choices;
     document.getElementById('signed_at').value = stamp;
-    document.getElementById('wording').value = words;
     var names = [val('signer1_name'), val('signer2_name')].filter(Boolean).join(' and ');
     document.getElementById('subj').value = 'Signed media release: ' + names + ' (' + choices + ')';
 
