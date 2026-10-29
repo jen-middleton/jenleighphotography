@@ -157,6 +157,23 @@
       choices: choices, tagging: tag ? tag.value : 'Not answered', instagram: val('instagram'), signer1: val('signer1_name'), signer2: val('signer2_name'),
       minors: val('minor_names'), email: val('email'), phone: val('phone'), wording: words, version: '2026-10-29b' };
     try { sessionStorage.setItem('jl_release_copy', JSON.stringify(copy)); } catch (x) {}
+
+    // Send in the background and go to our own page; the free form plan ignores _next and shows its own page (Jen 2026-10-29)
+    if (!window.fetch || !window.FormData) return;  // very old browser: plain submit
+    e.preventDefault();
+    var btn = f.querySelector('button[type=submit]');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (res.ok) { location.href = '/release-signed'; return; }
+        var m = (res.j && res.j.errors && res.j.errors.map(function (x) { return x.message; }).join(' ')) || 'Something went wrong.';
+        throw new Error(m);
+      })
+      .catch(function (x) {
+        btn.disabled = false; btn.textContent = 'Sign and send';
+        err.textContent = 'Your release did not send (' + x.message + '). Please try again, or email Jen.';
+      });
   });
 })();
 </script>
