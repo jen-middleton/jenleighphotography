@@ -164,15 +164,20 @@
     var btn = f.querySelector('button[type=submit]');
     btn.disabled = true; btn.textContent = 'Sending...';
     fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
       .then(function (res) {
         if (res.ok) { location.href = '/release-signed'; return; }
-        var m = (res.j && res.j.errors && res.j.errors.map(function (x) { return x.message; }).join(' ')) || 'Something went wrong.';
+        var j = res.j || {};
+        var m = (j.errors && j.errors.map(function (x) { return x.message || x.code; }).join(' ')) || j.error || ('status ' + res.status);
         throw new Error(m);
       })
       .catch(function (x) {
-        btn.disabled = false; btn.textContent = 'Sign and send';
-        err.textContent = 'Your release did not send (' + x.message + '). Please try again, or email Jen.';
+        // Background send refused (for example the form's robot check): send the normal way instead,
+        // so the release still arrives, and note why in the submission.
+        var note = document.createElement('input');
+        note.type = 'hidden'; note.name = 'background_send_failed'; note.value = String(x && x.message || x);
+        f.appendChild(note);
+        HTMLFormElement.prototype.submit.call(f);
       });
   });
 })();
