@@ -102,6 +102,7 @@
     <div class="grid">
       <div class="full"><label for="minor_names">Children's first names and ages (if any)</label><input id="minor_names" type="text" name="minor_names" placeholder="Ava 6, Leo 3"></div>
     </div>
+    <label class="choice" style="margin-top:10px"><input type="checkbox" name="kids_faceless" value="Yes" id="kids_faceless"><span>Faceless photos only<small>Share photos of my children only where their faces are not shown, such as from behind, hands, or details.</small></span></label>
     <p class="note">A signer above who is the children's parent or legal guardian agrees for them, and confirms they have the legal authority to do so.</p>
 
     <h2>Your contact info</h2>
@@ -115,7 +116,7 @@
     <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <input type="hidden" name="_subject" id="subj" value="Signed media release">
     <input type="hidden" name="_next" value="https://jenleighphotography.com/release-signed">
-    <input type="hidden" name="release_version" value="2026-10-29b">
+    <input type="hidden" name="release_version" value="2026-10-30">
     <input type="hidden" name="choices" id="choices">
     <input type="hidden" name="signed_at" id="signed_at">
     <p class="err" id="err" role="alert"></p>
@@ -146,6 +147,7 @@
     err.textContent = '';
 
     var choices = priv.checked ? 'No, keep my photos private' : picked().join(' + ');
+    if (!priv.checked && document.getElementById('kids_faceless').checked) choices += ' (children: faceless photos only)';
     var stamp;
     try { stamp = new Date().toLocaleString('en-US', { timeZone: 'America/Denver', dateStyle: 'medium', timeStyle: 'short' }) + ' (Denver time)'; }
     catch (x) { stamp = new Date().toString(); }
@@ -159,7 +161,7 @@
     var tag = document.querySelector('input[name=tagging]:checked');
     var copy = { signed_at: stamp, session_date: val('session_date'), session_type: val('session_type'), session_location: val('session_location'),
       choices: choices, tagging: tag ? tag.value : 'Not answered', instagram: val('instagram'), signer1: val('signer1_name'), signer2: val('signer2_name'),
-      minors: val('minor_names'), email: val('email'), phone: val('phone'), wording: words, version: '2026-10-29b' };
+      minors: val('minor_names'), email: val('email'), phone: val('phone'), wording: words, version: '2026-10-30' };
     try { sessionStorage.setItem('jl_release_copy', JSON.stringify(copy)); } catch (x) {}
 
     // Send in the background and go to our own page; the free form plan ignores _next and shows its own page (Jen 2026-10-29)
