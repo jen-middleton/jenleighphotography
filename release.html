@@ -188,5 +188,16 @@
   });
 })();
 </script>
+<script>
+  // Coming back with the Back button shows the page as it was left ("Sending..."); reset the button (Jen 2026-11-09)
+  window.addEventListener('pageshow', function (e) {
+    if (!e.persisted) return;
+    document.querySelectorAll('form button[type=submit]').forEach(function (b) {
+      b.disabled = false; if (b.dataset.label) b.textContent = b.dataset.label;
+    });
+    document.querySelectorAll('form').forEach(function (f) { delete f.dataset.plain; });
+  });
+  document.querySelectorAll('form button[type=submit]').forEach(function (b) { b.dataset.label = b.textContent; });
+</script>
 </body>
 </html>
