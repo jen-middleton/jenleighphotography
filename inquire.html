@@ -107,9 +107,21 @@
       <input id="people" type="number" name="people" min="1" max="30" value="1" inputmode="numeric">
       <p class="form-note" id="peopleNote">Up to 4 people are included. Each additional person is $25.</p>
       <input type="hidden" id="estTotal" name="estimated_total" value="">
+      <div id="kidsRow" hidden><label for="kidsAges">Ages of any kids (optional)</label><input id="kidsAges" type="text" name="kids_ages" maxlength="120" placeholder="For example: 2 and 6, or no kids"></div>
     </div>
     <p class="form-note">I photograph at golden hour for the best light. I am available weekday evenings after 4:30 and anytime on weekends.</p>
     <div><label for="message">Tell me about your day</label><textarea id="message" name="message" placeholder="Location, vision, anything you're excited about." required></textarea></div>
+    <div><label for="foundMe">How did you find me? (optional)</label>
+      <select id="foundMe" name="found_me">
+        <option value="">Choose one</option>
+        <option>Instagram</option>
+        <option>Facebook</option>
+        <option>TikTok</option>
+        <option>Google search</option>
+        <option>Referral from a friend or past client</option>
+        <option>Other</option>
+      </select>
+    </div>
     <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <input type="hidden" id="subjectField" name="_subject" value="New inquiry from your photography site">
     <input type="hidden" name="_next" value="https://jenleighphotography.com/thanks">
@@ -141,8 +153,12 @@
     var opt = pkg.options[pkg.selectedIndex], base = opt && opt.getAttribute('data-base');
     var row = document.getElementById('peopleRow'), note = document.getElementById('peopleNote'), est = document.getElementById('estTotal');
     row.hidden = !base; ppl.disabled = !base; est.disabled = !base;
+    var n = Math.max(1, parseInt(ppl.value, 10) || 1);
+    // More than one person: ask the ages of any kids (Jen 2026-11-09)
+    var kids = !!base && n > 1;
+    document.getElementById('kidsRow').hidden = !kids; document.getElementById('kidsAges').disabled = !kids;
     if (!base) return;
-    var n = Math.max(1, parseInt(ppl.value, 10) || 1), extra = Math.max(0, n - 4) * 25, total = +base + extra;
+    var extra = Math.max(0, n - 4) * 25, total = +base + extra;
     note.textContent = extra
       ? 'Your total: $' + total + ' ($' + base + ' session + $' + extra + ' for ' + (n - 4) + ' extra ' + (n - 4 === 1 ? 'person' : 'people') + ').'
       : 'Up to 4 people are included. Each additional person is $25.';
