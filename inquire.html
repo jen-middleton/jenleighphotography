@@ -73,6 +73,7 @@
       <div><label for="connect">How would you like to connect?</label>
         <select id="connect" name="connect" required>
           <option>Email is great</option>
+          <option>Text me</option>
           <option>I'd love a quick call</option>
         </select>
       </div>
@@ -148,6 +149,15 @@
     est.value = '$' + total;
   }
   if (pkg && ppl) { pkg.addEventListener('change', updPeople); ppl.addEventListener('input', updPeople); updPeople(); }
+
+  // Text or call needs a phone number (Jen 2026-11-09)
+  var conn = document.getElementById('connect'), phone = document.getElementById('phone');
+  function updPhone() {
+    var need = conn.value !== 'Email is great';
+    phone.required = need;
+    phone.previousElementSibling.textContent = need ? 'Phone' : 'Phone (optional)';
+  }
+  if (conn && phone) { conn.addEventListener('change', updPhone); updPhone(); }
 
   // Stamp the email subject with the date and time the inquiry was sent (Denver time)
   var inqForm = document.querySelector('.inquire-form');
