@@ -36,6 +36,10 @@
   a.btn{display:inline-block;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;border:1px solid var(--ink);
     padding:14px 30px;color:inherit;text-decoration:none;transition:all .25s}
   a.btn:hover{background:var(--ink);color:var(--paper)}
+  .call{margin:6px 0 30px;max-width:460px}
+  .call-lead{margin-bottom:18px}
+  a.btn-solid{background:var(--ink);color:var(--paper)}
+  a.btn-solid:hover{background:transparent;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -43,7 +47,17 @@
     <div class="k">Inquiry received</div>
     <h1>Thank you, I'll be <em>in touch</em>.</h1>
     <p>Your message just landed in my inbox. I read every inquiry personally and will get back to you within a couple of days. I can't wait to hear more about your day.</p>
+    <div class="call" id="callBox" hidden>
+      <p class="call-lead">Planning a wedding or elopement? If you'd like to talk it through, grab a quick free call with me. Totally optional, email works great too.</p>
+      <a class="btn btn-solid" href="https://book.squareup.com/appointments/pu7fao3lqesfeo/location/LBG4XZ0H7MMP0" target="_blank" rel="noopener">Book a free call</a>
+    </div>
     <a class="btn" href="/">Back to the portfolio</a>
   </main>
+  <script>
+    // Wedding and elopement inquiries get an optional consultation call link (Jen 2026-11-09, Square Appointments)
+    try {
+      if (/wedding|elopement/i.test(sessionStorage.getItem('jl_pkg') || '')) document.getElementById('callBox').hidden = false;
+    } catch (e) {}
+  </script>
 </body>
 </html>

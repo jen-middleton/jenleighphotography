@@ -45,7 +45,7 @@
         <input type="checkbox" id="ddtoggle" class="ddtoggle">
         <label for="ddtoggle" class="dd-btn">Portfolio</label>
         <div class="dd-menu"><div class="dd-in">
-          <a href="portraits">Portraits &amp; Seniors</a>
+          <a href="portraits">Portraits, Seniors &amp; Families</a>
           <a href="couples">Couples</a>
           <a href="weddings">Weddings</a>
         </div></div>
@@ -137,7 +137,7 @@
   <div>Based in the foothills near Denver</div>
   <div class="subnav-links">
     <a href="couples">Couples</a>
-    <a href="portraits">Portraits &amp; Seniors</a>
+    <a href="portraits">Portraits, Seniors &amp; Families</a>
     <a href="pricing">Pricing</a>
     <a href="inquire">Inquire</a>
   </div>
@@ -206,7 +206,10 @@
       fetch(inqForm.action, { method: 'POST', body: new FormData(inqForm), headers: { 'Accept': 'application/json' } })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
         .then(function (res) {
-          if (res.ok) { location.href = '/thanks'; return; }
+          if (res.ok) {
+            try { sessionStorage.setItem('jl_pkg', document.getElementById('package').value); } catch (x) {}
+            location.href = '/thanks'; return;
+          }
           var j = res.j || {};
           throw new Error((j.errors && j.errors.map(function (x) { return x.message || x.code; }).join(' ')) || j.error || ('status ' + res.status));
         })
