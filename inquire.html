@@ -194,6 +194,30 @@
       }
       subj.value = 'New inquiry - ' + stamp;
     });
+
+    // Send in the background and show our own thank-you page; the free Formspree plan ignores _next
+    // and shows its own page (Jen 2026-11-09, same fix as the release form). If the background send
+    // is refused, fall back to the normal send so the inquiry still arrives.
+    inqForm.addEventListener('submit', function (e) {
+      if (!window.fetch || !window.FormData || inqForm.dataset.plain) return;
+      e.preventDefault();
+      var btn = inqForm.querySelector('button[type=submit]');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      fetch(inqForm.action, { method: 'POST', body: new FormData(inqForm), headers: { 'Accept': 'application/json' } })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, j: j }; }); })
+        .then(function (res) {
+          if (res.ok) { location.href = '/thanks'; return; }
+          var j = res.j || {};
+          throw new Error((j.errors && j.errors.map(function (x) { return x.message || x.code; }).join(' ')) || j.error || ('status ' + res.status));
+        })
+        .catch(function (x) {
+          var note = document.createElement('input');
+          note.type = 'hidden'; note.name = 'background_send_failed'; note.value = String(x && x.message || x);
+          inqForm.appendChild(note);
+          inqForm.dataset.plain = '1';
+          HTMLFormElement.prototype.submit.call(inqForm);
+        });
+    });
   }
 </script>
 </body>
