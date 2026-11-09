@@ -130,10 +130,6 @@
   .incl{list-style:none;padding:0;margin:14px auto 0;max-width:240px;color:#5b554c;font-size:.92rem;text-align:center}
   .incl li{padding:7px 0;border-top:1px solid var(--line)}
   .incl li:first-child{border-top:none}
-  .price-callout{max-width:560px;margin:44px auto 0;padding:18px 28px;border:1px solid var(--accent);background:rgba(154,140,116,.08);text-align:center}
-  .price-callout .k{display:block;margin-bottom:6px}
-  .price-callout p{margin:0;font-size:1.05rem;color:var(--ink)}
-  .price-callout b{font-weight:500}
   .price-includes{max-width:640px;margin:56px auto 0;text-align:center;color:var(--muted);font-size:.9rem;line-height:1.6}
   .about-feature{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center;max-width:1120px;margin:0 auto;padding:80px 32px 30px}
   .af-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:2px}
