@@ -13,12 +13,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Inquire | Jen Leigh Photography</title>
-<meta name="description" content="Inquire about couples, engagement, and portrait photography in Colorado with Jen Leigh Photography. Tell me about your day.">
+<meta name="description" content="Inquire about couples, engagement, portrait, and family photography in Colorado with Jen Leigh Photography. Tell me about your day.">
 <link rel="canonical" href="https://jenleighphotography.com/inquire">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jen Leigh Photography">
 <meta property="og:title" content="Inquire | Jen Leigh Photography">
-<meta property="og:description" content="Tell me about your couples or portrait session in Colorado.">
+<meta property="og:description" content="Tell me about your couples, portrait, or family session in Colorado.">
 <meta property="og:url" content="https://jenleighphotography.com/inquire">
 <meta property="og:image" content="https://jenleighphotography.com/assets/og-inquire.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,7 @@
 <section class="contact" id="contact" style="border-top:none;margin-top:0;padding-top:96px">
   <div class="k">Let's work together</div>
   <h2>Let's make something <em>beautiful</em>.</h2>
-  <p>Couples, engagements, portraits, elopements, and weddings. Tell me about your day.</p>
+  <p>Couples, engagements, portraits, families, elopements, and weddings. Tell me about your day.</p>
   <form class="inquire-form" action="https://formspree.io/f/xrpgavjn" method="POST">
     <div class="row2">
       <div><label for="name">Name</label><input id="name" type="text" name="name" required></div>
@@ -91,9 +91,9 @@
     <div><label for="package">What are you interested in?</label>
       <select id="package" name="package" required>
         <option>Not sure yet, help me choose</option>
-        <option>Portraits &middot; 30 Minutes ($150)</option>
-        <option>Portraits &middot; 1 Hour ($275)</option>
-        <option>Portraits &middot; 2 Hours ($375)</option>
+        <option data-base="150">Portraits &amp; Families &middot; 30 Minutes ($150)</option>
+        <option data-base="275">Portraits &amp; Families &middot; 1 Hour ($275)</option>
+        <option data-base="375">Portraits &amp; Families &middot; 2 Hours ($375)</option>
         <option>Couples &amp; Engagement &middot; 30 Minutes ($175)</option>
         <option>Couples &amp; Engagement &middot; 1 Hour ($325)</option>
         <option>Couples &amp; Engagement &middot; 2 Hours ($475)</option>
@@ -101,6 +101,11 @@
         <option>Wedding (from $2,400)</option>
       </select>
       <div class="price-link"><a href="pricing">See full pricing &amp; packages</a></div>
+    </div>
+    <div id="peopleRow" hidden><label for="people">How many people in the photos?</label>
+      <input id="people" type="number" name="people" min="1" max="30" value="1" inputmode="numeric">
+      <p class="form-note" id="peopleNote">Up to 4 people are included. Each additional person is $25.</p>
+      <input type="hidden" id="estTotal" name="estimated_total" value="">
     </div>
     <p class="form-note">I photograph at golden hour for the best light. I am available weekday evenings after 4:30 and anytime on weekends.</p>
     <div><label for="message">Tell me about your day</label><textarea id="message" name="message" placeholder="Location, vision, anything you're excited about." required></textarea></div>
@@ -128,6 +133,21 @@
 <script>
   // Minis are booked on the minis page only (Jen 2026-10-18); send old inquire?s=mini links there
   if (location.search.indexOf('s=mini') !== -1) location.replace('minis');
+
+  // Portraits & Families: ask how many people, add $25 per person over 4 (Jen 2026-11-08)
+  var pkg = document.getElementById('package'), ppl = document.getElementById('people');
+  function updPeople() {
+    var opt = pkg.options[pkg.selectedIndex], base = opt && opt.getAttribute('data-base');
+    var row = document.getElementById('peopleRow'), note = document.getElementById('peopleNote'), est = document.getElementById('estTotal');
+    row.hidden = !base; ppl.disabled = !base; est.disabled = !base;
+    if (!base) return;
+    var n = Math.max(1, parseInt(ppl.value, 10) || 1), extra = Math.max(0, n - 4) * 25, total = +base + extra;
+    note.textContent = extra
+      ? 'Your total: $' + total + ' ($' + base + ' session + $' + extra + ' for ' + (n - 4) + ' extra ' + (n - 4 === 1 ? 'person' : 'people') + ').'
+      : 'Up to 4 people are included. Each additional person is $25.';
+    est.value = '$' + total;
+  }
+  if (pkg && ppl) { pkg.addEventListener('change', updPeople); ppl.addEventListener('input', updPeople); updPeople(); }
 
   // Stamp the email subject with the date and time the inquiry was sent (Denver time)
   var inqForm = document.querySelector('.inquire-form');
