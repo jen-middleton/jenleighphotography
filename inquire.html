@@ -92,14 +92,24 @@
     <div><label for="package">What are you interested in?</label>
       <select id="package" name="package" required>
         <option>Not sure yet, help me choose</option>
-        <option data-base="175">Portraits &amp; Families &middot; 30 Minutes ($175)</option>
-        <option data-base="325">Portraits &amp; Families &middot; 1 Hour ($325)</option>
-        <option>Couples &amp; Engagement &middot; 30 Minutes ($175)</option>
-        <option>Couples &amp; Engagement &middot; 1 Hour ($325)</option>
+        <option data-base="175">Portrait Session &middot; 30 Minutes ($175)</option>
+        <option data-base="325">Portrait Session &middot; 1 Hour ($325)</option>
         <option>Elopement (from $1,200)</option>
         <option>Wedding (from $2,400)</option>
       </select>
       <div class="price-link"><a href="pricing">See full pricing &amp; packages</a></div>
+    </div>
+    <div id="kindRow" hidden><label for="kind">What kind of session?</label>
+      <select id="kind" name="session_kind">
+        <option value="">Choose one</option>
+        <option>Family</option>
+        <option>Couples</option>
+        <option>Engagement</option>
+        <option>Senior</option>
+        <option>Individual</option>
+        <option>Maternity</option>
+        <option>Something else</option>
+      </select>
     </div>
     <div id="peopleRow" hidden><label for="people">How many people in the photos?</label>
       <input id="people" type="number" name="people" min="1" max="30" value="1" inputmode="numeric">
@@ -152,9 +162,14 @@
     var opt = pkg.options[pkg.selectedIndex], base = opt && opt.getAttribute('data-base');
     var row = document.getElementById('peopleRow'), note = document.getElementById('peopleNote'), est = document.getElementById('estTotal');
     row.hidden = !base; ppl.disabled = !base; est.disabled = !base;
+    // Portrait sessions: what kind (Jen 2026-11-10, one price for every kind of portrait session)
+    var kr = document.getElementById('kindRow'), kd = document.getElementById('kind');
+    kr.hidden = !base; kd.disabled = !base; kd.required = !!base;
+    var two = /^(Couples|Engagement)$/.test(kd.value);
+    if (two && !ppl.dataset.touched) ppl.value = 2;
     var n = Math.max(1, parseInt(ppl.value, 10) || 1);
-    // More than one person: ask the ages of any kids (Jen 2026-11-09)
-    var kids = !!base && n > 1;
+    // More than one person: ask the ages of any kids (Jen 2026-11-09); not for couples
+    var kids = !!base && n > 1 && !two;
     document.getElementById('kidsRow').hidden = !kids; document.getElementById('kidsAges').disabled = !kids;
     if (!base) return;
     var extra = Math.max(0, n - 4) * 25, total = +base + extra;
@@ -163,7 +178,10 @@
       : 'Up to 4 people are included. Each additional person is $25.';
     est.value = '$' + total;
   }
-  if (pkg && ppl) { pkg.addEventListener('change', updPeople); ppl.addEventListener('input', updPeople); updPeople(); }
+  if (pkg && ppl) {
+    pkg.addEventListener('change', updPeople); document.getElementById('kind').addEventListener('change', updPeople);
+    ppl.addEventListener('input', function () { ppl.dataset.touched = '1'; updPeople(); }); updPeople();
+  }
 
   // Text or call needs a phone number (Jen 2026-11-09)
   var conn = document.getElementById('connect'), phone = document.getElementById('phone');
