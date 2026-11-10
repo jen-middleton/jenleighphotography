@@ -92,8 +92,8 @@
     <div><label for="package">What are you interested in?</label>
       <select id="package" name="package" required>
         <option>Not sure yet, help me choose</option>
-        <option data-base="175">Portrait Session &middot; 30 Minutes ($175)</option>
-        <option data-base="325">Portrait Session &middot; 1 Hour ($325)</option>
+        <option data-base="175">Photo Session &middot; 30 Minutes ($175)</option>
+        <option data-base="325">Photo Session &middot; 1 Hour ($325)</option>
         <option>Elopement (from $1,200)</option>
         <option>Wedding (from $2,400)</option>
       </select>
@@ -162,7 +162,7 @@
     var opt = pkg.options[pkg.selectedIndex], base = opt && opt.getAttribute('data-base');
     var row = document.getElementById('peopleRow'), note = document.getElementById('peopleNote'), est = document.getElementById('estTotal');
     row.hidden = !base; ppl.disabled = !base; est.disabled = !base;
-    // Portrait sessions: what kind (Jen 2026-11-10, one price for every kind of portrait session)
+    // Photo sessions: what kind (Jen 2026-11-10, one price for every kind of portrait session)
     var kr = document.getElementById('kindRow'), kd = document.getElementById('kind');
     kr.hidden = !base; kd.disabled = !base; kd.required = !!base;
     var two = /^(Couples|Engagement)$/.test(kd.value);
